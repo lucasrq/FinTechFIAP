@@ -1,0 +1,61 @@
+.crud-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.crud-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.crud-form button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.crud-form button:hover {
+  background-color: #218838;
+}
+
+.crud-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.crud-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.list-item-buttons button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.list-item-buttons button:first-of-type {
+  background-color: #ffc107;
+}
+
+.list-item-buttons button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
