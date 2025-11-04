@@ -1,77 +1,55 @@
-# FinTech---FIAP
-API REST desenvolvida em **Spring Boot** para gerenciamento financeiro pessoal, permitindo cadastrar e controlar usuários, receitas e despesas, com conexão ao banco **Oracle** e arquitetura **MVC**.
+# Projeto Fintech - Challenge FIAP
 
+Projeto full-stack (Java/Spring, Oracle, React) para controle de finanças pessoais.
 
+## Integrantes do Grupo
 
-# 💰 Gestão Financeira API
+* Nome - RM
+* Nome - RM
+* Nome - RM
 
-API desenvolvida em **Spring Boot** para gerenciamento financeiro pessoal.  
-O sistema permite cadastrar **usuários, receitas e despesas**, facilitando o controle de ganhos e gastos.
+Instruções de Inicialização
 
----
+### Pré-requisitos
 
-## 🚀 Tecnologias Utilizadas
-- Java 21  
-- Spring Boot  
-- Spring Data JPA   
-- Oracle Database  
-- Maven  
----
+* Java JDK 21
+* Node.js (v18 ou superior)
+* Acesso à instância Oracle da FIAP
 
-src/main/java/br/com/fiap/gestaofinanceira
-├── controller # Controladores REST
-│ ├── DespesaController
-│ ├── ReceitaController
-│ └── UsuarioController
-│
-├── model # Entidades do banco de dados
-│ ├── Despesa
-│ ├── Receita
-│ └── Usuario
-│
-├── repository # Interfaces de acesso ao banco (JPA)
-│ ├── DespesaRepository
-│ ├── ReceitaRepository
-│ └── UsuarioRepository
-│
-├── service # Regras de negócio
-│ ├── DespesaService
-│ ├── ReceitaService
-│ └── UsuarioService
-│
-└── GestaofinanceiraApplication.java # Classe principal do projeto
+1. Backend (Spring Boot)
 
+1.  Abra um terminal e navegue até a pasta `backend`:
+    ```bash
+    cd backend
+    ```
+2.  **Importante:** Configure seu RM e senha do Oracle no arquivo:
+    `backend/src/main/resources/application.properties`
 
+3.  Execute o servidor Spring:
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+4.  O servidor estará rodando em `http://localhost:8080`.
 
+### 2. Frontend (React)
 
+1.  Abra um **segundo terminal** e navegue até a pasta `frontend`:
+    ```bash
+    cd frontend
+    ```
+2.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+3.  Inicie o servidor React:
+    ```bash
+    npm start
+    ```
+4.  A aplicação estará disponível em `http://localhost:3000`.
 
-## ⚙️ Funcionalidades
-- ✅ Cadastro de usuário com senha criptografada
-- 🔐 Login com autenticação JWT
-- 💵 Cadastro e listagem de receitas
-- 💳 Cadastro e listagem de despesas
-- 🔗 Associação automática das receitas/despesas ao usuário logado
+## 🔑 Dados de Autenticação (Teste)
 
-## 🧪 Testes via Insomnia
-Endpoints disponíveis:
+Para acessar o sistema, cadastre um novo usuário primeiro (via API ou implementando a tela) e depois use as credenciais na página de login.
 
-### 👤 Usuário
-- `POST /api/usuarios` → Cadastra um novo usuário  
-- `POST /api/login` → Realiza login e retorna token JWT
-
-### 💰 Receitas
-- `POST /api/receitas` → Cadastra uma receita (autenticado)
-- `GET /api/receitas` → Lista receitas do usuário autenticado
-
-### 💸 Despesas
-- `POST /api/despesas` → Cadastra uma despesa (autenticado)
-- `GET /api/despesas` → Lista despesas do usuário autenticado
-
----
-
-## 🧩 Como Executar
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/FinTech.git
-Configure o banco de dados em application.properties
-
+* **Login:** (email do usuário cadastrado)
+* **Senha:** (senha do usuário cadastrado)
