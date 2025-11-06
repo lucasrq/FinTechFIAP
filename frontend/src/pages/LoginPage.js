@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import api from '../services/api';
 import './LoginPage.css'; 
 
@@ -38,6 +38,11 @@ function LoginPage() {
           required 
         />
         <button type="submit">Entrar</button>
+
+        <p style={{ textAlign: 'center', marginTop: '20px' }}>
+          Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+        </p>
+        
       </form>
     </div>
   );
