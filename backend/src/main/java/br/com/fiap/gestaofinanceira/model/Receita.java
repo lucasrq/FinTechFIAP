@@ -1,8 +1,6 @@
 package br.com.fiap.gestaofinanceira.model;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -21,9 +19,8 @@ public class Receita {
     private LocalDate dataRecebimento;
 
     @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", nullable = false) // cria a coluna no banco
+    @JoinColumn(name = "ID_USUARIO", nullable = false)
     private Usuario usuario;
-
 
     public Long getId() {
         return id;

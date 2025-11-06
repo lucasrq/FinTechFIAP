@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
-import './DespesasPage.css'
-import '../index.css'; 
+import './DespesasPage.css';
+import '../index.css';
+import { Link } from 'react-router-dom';
 
 function ReceitasPage() {
   const [receitas, setReceitas] = useState([]);
@@ -81,11 +82,28 @@ function ReceitasPage() {
 
   return (
     <div className="container">
+
+      <Link to="/" className="back-link">
+        &larr; Voltar ao Menu Principal
+      </Link>
+
       <h2>Minhas Receitas</h2>
       
       <form onSubmit={handleSubmit} className="crud-form">
         <input type="text" placeholder="Descrição" value={descricao} onChange={(e) => setDescricao(e.target.value)} required />
-        <input type="number" placeholder="Valor" value={valor} onChange={(e) => setValor(e.target.value)} required />
+        
+        <div className="input-group">
+          <span className="input-group-text">R$</span>
+          <input 
+            type="number" 
+            placeholder="Valor" 
+            value={valor} 
+            onChange={(e) => setValor(e.target.value)} 
+            required 
+            step="0.01" 
+          />
+        </div>
+
         <button type="submit">{editandoId ? 'Atualizar' : 'Adicionar'}</button>
         {editandoId && <button type="button" onClick={resetForm}>Cancelar</button>}
       </form>

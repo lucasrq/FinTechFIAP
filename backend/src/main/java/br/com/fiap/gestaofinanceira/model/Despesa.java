@@ -1,8 +1,6 @@
 package br.com.fiap.gestaofinanceira.model;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -17,7 +15,6 @@ public class Despesa {
 
     private String descricao;
     private Double valor;
-
     private String categoria;
 
     @Column(name = "DATA_PAGAMENTO")
@@ -25,9 +22,8 @@ public class Despesa {
 
     private char pago;
 
-
     @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", nullable = false) // cria a coluna no banco
+    @JoinColumn(name = "ID_USUARIO", nullable = false)
     private Usuario usuario;
 
     public Long getId() {

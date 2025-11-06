@@ -13,7 +13,6 @@ function HomePage() {
   };
 
   return (
-
     <div className="container">
       <div className="home-header">
         <h2>Bem-vindo, {usuario ? usuario.nome : 'Usuário'}!</h2>

@@ -2,8 +2,8 @@ package br.com.fiap.gestaofinanceira.model;
 
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,13 +33,11 @@ public class Usuario {
     @Column(name = "RENDA_MENSAL")
     private Double rendaMensal;
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Receita> receitas = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<Receita> receitas;
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<Despesa> despesas;
-
+    private List<Despesa> despesas = new ArrayList<>();
 
     public Long getId() {
         return id;
